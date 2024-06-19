@@ -56,6 +56,12 @@ public class Pain extends LinearOpMode {
             driveMotors[2].setPower(y+x);
             driveMotors[3].setPower(y-x);
 
+            int i = 0;
+
+            if (gamepad1.a == true) {
+                i++;
+            }
+
 
 
 
