@@ -42,7 +42,10 @@ public class Pain extends LinearOpMode {
 
         applyConfig(driveMotors);
 
+        /* Define Elevator Target */
         int target = 0;
+
+        /* Define Hat Up/Down Last State */
         boolean lastStateUp = true;
         boolean lastStateDown = true;
 
@@ -77,9 +80,11 @@ public class Pain extends LinearOpMode {
             } else {
                 lastStateDown = gamepad1.dpad_down;
             }
-            
+
+            /* Display Target On Driver Hub */
             telemetry.addData("target", target);
-            
+
+            /* Get Elevator Motor Position */
             int pos = elevatorMotor.getCurrentPosition();
             if (gamepad1.b == true) {
                 elevatorMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -105,7 +110,7 @@ public class Pain extends LinearOpMode {
                 }
                 telemetry.addData("Elevator power", elevatorCmd);
             }
-
+            
             telemetry.addData("Elevator Pos", pos);
 
 //            double elevatorCmd = -(rt-lt);
